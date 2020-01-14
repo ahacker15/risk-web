@@ -4,7 +4,7 @@
     <el-form
       :inline="true"
       :model="formData"
-      class="demo-ruleForm"
+      class="myClass"
       label-width="145px"
       :rules="formRules"
       ref="formData"
@@ -622,3 +622,11 @@
         }
     }
 </script>
+<style lang="css" scoped>
+  .myClass /deep/ input.el-input__inner {
+    color: #606266;
+  }
+  .myClass /deep/ textarea.el-textarea__inner{
+    color: #606266;
+  }
+</style>

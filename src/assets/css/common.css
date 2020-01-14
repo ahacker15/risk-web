@@ -221,3 +221,11 @@ body {
   width: calc(100% - 40px);
   height: calc(100% - 35px);
 }
+
+.el-input__inner{
+  font-size: 14px;
+}
+
+.el-textarea__inner{
+  font-size: 14px;
+}

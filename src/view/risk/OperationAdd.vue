@@ -38,15 +38,8 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="风险等级：" prop="riskGrade">
-            <el-select v-model="formData.riskGrade"
-                       placeholder="风险等级"
-                       style="width: 100%;"
-            >
-              <el-option label="--请选择--" value=""></el-option>
-              <el-option :label="item.name" :value="item.code"
-                         v-for="item in dictionary.riskGrade" :key="item.id"></el-option>
-            </el-select>
+          <el-form-item label="部门联系人：" prop="orgContact">
+            <el-input v-model="formData.orgContact" placeholder="部门联系人" maxlength="64"></el-input>
           </el-form-item>
         </el-col>
       </el-row>
@@ -60,6 +53,18 @@
               <el-option label="--请选择--" value=""></el-option>
               <el-option :label="item.name" :value="item.code"
                          v-for="item in dictionary.riskType" :key="item.id"></el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item label="风险等级：" prop="riskGrade">
+            <el-select v-model="formData.riskGrade"
+                       placeholder="风险等级"
+                       style="width: 100%;"
+            >
+              <el-option label="--请选择--" value=""></el-option>
+              <el-option :label="item.name" :value="item.code"
+                         v-for="item in dictionary.riskGrade" :key="item.id"></el-option>
             </el-select>
           </el-form-item>
         </el-col>
@@ -215,7 +220,7 @@
               active-text="结案"
               inactive-text="在办"
               @change="eventStatusChange"
-            >
+              >
             </el-switch>
           </el-form-item>
         </el-col>
@@ -290,6 +295,7 @@
         formData: {
           registrateTime: '',
           legalEntity: '',
+          orgContact: '',
           businessUnit: '',
           riskGrade: '',
           riskType: '',

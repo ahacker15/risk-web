@@ -4,7 +4,7 @@
     <el-form
       :inline="true"
       :model="formData"
-      class="demo-ruleForm"
+      class="myClass"
       label-width="145px"
       :rules="formRules"
       ref="formData"
@@ -37,14 +37,8 @@
           </el-form-item>
         </el-col>
         <el-col :span="12">
-          <el-form-item label="风险等级：" prop="riskGrade">
-            <el-select v-model="formData.riskGrade"
-                       style="width: 100%;"
-            >
-              <el-option label="--请选择--" value=""></el-option>
-              <el-option :label="item.name" :value="item.code"
-                         v-for="item in dictionary.riskGrade" :key="item.id"></el-option>
-            </el-select>
+          <el-form-item label="部门联系人：" prop="orgContact">
+            <el-input v-model="formData.orgContact" placeholder="部门联系人" maxlength="64"></el-input>
           </el-form-item>
         </el-col>
       </el-row>
@@ -57,6 +51,17 @@
               <el-option label="--请选择--" value=""></el-option>
               <el-option :label="item.name" :value="item.code"
                          v-for="item in dictionary.riskType" :key="item.id"></el-option>
+            </el-select>
+          </el-form-item>
+        </el-col>
+        <el-col :span="12">
+          <el-form-item label="风险等级：" prop="riskGrade">
+            <el-select v-model="formData.riskGrade"
+                       style="width: 100%;"
+            >
+              <el-option label="--请选择--" value=""></el-option>
+              <el-option :label="item.name" :value="item.code"
+                         v-for="item in dictionary.riskGrade" :key="item.id"></el-option>
             </el-select>
           </el-form-item>
         </el-col>
@@ -246,6 +251,7 @@
           registrateTime: '',
           legalEntity: '',
           businessUnit: '',
+          orgContact: '',
           riskGrade: '',
           riskType: '',
           riskMatter: '',
@@ -406,3 +412,11 @@
     }
   }
 </script>
+<style lang="css" scoped>
+  .myClass /deep/ input.el-input__inner {
+    color: #606266;
+  }
+  .myClass /deep/ textarea.el-textarea__inner{
+    color: #606266;
+  }
+</style>

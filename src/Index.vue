@@ -2,7 +2,8 @@
   <el-container>
     <el-aside :width="isCollapse?'65px':'200px'">
       <div class="menu-top" v-if="!isCollapse">
-        <div class="menu-top-title" @dblclick="initDictionary">{{systemName}}</div>
+<!--        <div class="menu-top-title" @dblclick="initDictionary">{{systemName}}</div>-->
+        <div class="menu-top-title">{{systemName}}</div>
         <div class="menu-top-title-sub">{{systemSubName}}</div>
       </div>
       <div class="menu-top-close" v-else style="line-height: 60px">
