@@ -45,6 +45,27 @@
       </el-row>
       <el-row>
         <el-col :span="12">
+          <el-form-item label="对方主体：" prop="oppositePart"
+                        :rules="eventStatusClosed?formRules.oppositePart:[{required: false, message: '请输入对方主体', trigger: 'blur'}]">
+            <el-input v-model="formData.oppositePart" placeholder="对方主体" maxlength="64"></el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :span="8">
+          <el-form-item label="金额：" prop="money"
+                        :rules="eventStatusClosed?formRules.money:[{required: false, message: '请输入金额', trigger: 'blur'}]">
+            <el-input-number
+              v-model="formData.money"
+              :min="0"
+              :precision="2"
+              :step="0.5"
+              style="width: 100%;"
+              placeholder="金额">
+            </el-input-number>
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="12">
           <el-form-item label="风险类型：" prop="riskType">
             <el-select v-model="formData.riskType"
                        placeholder="风险类型"
@@ -191,6 +212,21 @@
         </el-col>
       </el-row>
       <el-row>
+        <el-col :span="8">
+          <el-form-item label="回款/减损金：" prop="derogationAmount"
+                        :rules="eventStatusClosed?formRules.derogationAmount:[{required: false, message: '请设置回款/减损金', trigger: 'blur'}]">
+            <el-input-number
+              v-model="formData.derogationAmount"
+              :min="0"
+              :precision="2"
+              :step="0.5"
+              style="width: 100%;"
+              placeholder="回款/减损金">
+            </el-input-number>
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-row>
         <el-col :span="24">
           <el-form-item label="总结/复盘：" prop="summary"
                         :rules="eventStatusClosed?formRules.summary:[{required: false, message: '总结/复盘', trigger: 'blur'}]">
@@ -297,6 +333,8 @@
           registrateTime: '',
           legalEntity: '',
           businessUnit: '',
+          oppositePart: '',
+          money: 0,
           orgContact: '',
           riskGrade: '',
           riskType: '',
@@ -309,6 +347,7 @@
           eventStatus: 'working',
           // 案件进展
           eventProgress: [{content: ''}],
+          derogationAmount: 0,
           files: [],
           filesCache: []
         },
@@ -322,6 +361,12 @@
           ],
           businessUnit: [
             {required: true, message: '请输入业务所在部门', trigger: 'blur'}
+          ],
+          oppositePart: [
+              {required: true, message: '请输入对方主体', trigger: 'blur'}
+          ],
+          money: [
+              {required: true, message: '请输入金额', trigger: 'blur'/*,validator: this.FUNCTIONS.systemFunction.checkMoneyNum*/}
           ],
           riskType: [
             {required: true, message: '请输入风险类型', trigger: 'blur'}
@@ -341,6 +386,14 @@
           ],
           eventProgress: [
             {required: true, message: '请输入事件进展', trigger: 'blur'}
+          ],
+          derogationAmount: [
+              {
+                  required: true,
+                  message: '请设置回款/减损金',
+                  trigger: 'blur',
+                  // validator: this.FUNCTIONS.systemFunction.checkMoneyNum
+              }
           ],
           summary: [
             {required: true, message: '请输入复盘总结', trigger: 'blur'}

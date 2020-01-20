@@ -44,6 +44,25 @@
       </el-row>
       <el-row>
         <el-col :span="12">
+          <el-form-item label="对方主体：" prop="oppositePart">
+            <el-input v-model="formData.oppositePart" placeholder="对方主体" maxlength="64"></el-input>
+          </el-form-item>
+        </el-col>
+        <el-col :span="8">
+          <el-form-item label="金额：" prop="money">
+            <el-input-number
+              v-model="formData.money"
+              :min="0"
+              :precision="2"
+              :step="0.5"
+              style="width: 100%;"
+              placeholder="金额">
+            </el-input-number>
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-row>
+        <el-col :span="12">
           <el-form-item label="风险类型：" prop="riskType">
             <el-select v-model="formData.riskType"
                        style="width: 100%;"
@@ -159,6 +178,20 @@
         </el-col>
       </el-row>
       <el-row>
+        <el-col :span="8">
+          <el-form-item label="回款/减损金：" prop="derogationAmount">
+            <el-input-number
+              v-model="formData.derogationAmount"
+              :min="0"
+              :precision="2"
+              :step="0.5"
+              style="width: 100%;"
+              placeholder="回款/减损金">
+            </el-input-number>
+          </el-form-item>
+        </el-col>
+      </el-row>
+      <el-row>
         <el-col :span="24">
           <el-form-item label="总结/复盘：" prop="summary">
             <el-input
@@ -251,6 +284,8 @@
           registrateTime: '',
           legalEntity: '',
           businessUnit: '',
+          oppositePart: '',
+          money: 0,
           orgContact: '',
           riskGrade: '',
           riskType: '',
@@ -263,6 +298,7 @@
           eventStatus: 'working',
           // 案件进展
           eventProgress: [{content: ''}],
+          derogationAmount: 0,
           files: [],
           filesCache: []
         },
