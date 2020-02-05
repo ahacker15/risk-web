@@ -45,9 +45,9 @@
       </el-row>
       <el-row>
         <el-col :span="12">
-          <el-form-item label="对方主体：" prop="oppositePart"
-                        :rules="eventStatusClosed?formRules.oppositePart:[{required: false, message: '请输入对方主体', trigger: 'blur'}]">
-            <el-input v-model="formData.oppositePart" placeholder="对方主体" maxlength="64"></el-input>
+          <el-form-item label="对方名称：" prop="oppositePart"
+                        :rules="eventStatusClosed?formRules.oppositePart:[{required: false, message: '请输入对方名称', trigger: 'blur'}]">
+            <el-input v-model="formData.oppositePart" placeholder="对方名称" maxlength="64"></el-input>
           </el-form-item>
         </el-col>
         <el-col :span="8">
@@ -526,15 +526,15 @@
         fileList.splice(index, 1)
       },
       getCurrentDate: function () {
-        var date1=new Date()
-        var seperator1 = "-"
-        var year=date1.getFullYear()
-        var month=date1.getMonth()+1
-        var day=date1.getDate()
-        var hours=date1.getHours()
-        var minutes=date1.getMinutes()
-        var seconds=date1.getSeconds()
-        return year+seperator1+month+seperator1+day+seperator1+hours+":"+minutes+":"+seconds
+          var seperator1 = "-"
+          var date1=new Date()
+          var year=date1.getFullYear()
+          var month=date1.getMonth()+1
+          var day=date1.getDate()
+          var hours=date1.getHours()
+          var minutes=date1.getMinutes()
+          var seconds=date1.getSeconds()
+          return year+seperator1+month+seperator1+day+seperator1+hours+":"+minutes+":"+seconds
       }
     }
   }

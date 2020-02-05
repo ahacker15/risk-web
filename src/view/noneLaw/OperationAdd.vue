@@ -508,23 +508,23 @@
                     costFlag: [
                         {required: true, message: '请选择是否产生费用', trigger: 'blur'}
                     ],
-                    caseAnalysis: [
-                        {required: true, message: '请输入案件分析', trigger: 'blur'}
-                    ],
-                    preliminaryOpinion: [
-                        {required: true, message: '请输入初步处理/答复意见', trigger: 'blur'}
-                    ],
-                    derogationAmount: [
-                        {
-                            required: true,
-                            message: '请设置回款/减损金',
-                            trigger: 'blur',
-                            // validator: this.FUNCTIONS.systemFunction.checkMoneyNum
-                        }
-                    ],
-                    caseProcess: [
-                        {required: true, message: '案件进展不可为空', trigger: 'blur'}
-                    ],
+                    // caseAnalysis: [
+                    //     {required: true, message: '请输入案件分析', trigger: 'blur'}
+                    // ],
+                    // preliminaryOpinion: [
+                    //     {required: true, message: '请输入初步处理/答复意见', trigger: 'blur'}
+                    // ],
+                    // derogationAmount: [
+                    //     {
+                    //         required: true,
+                    //         message: '请设置回款/减损金',
+                    //         trigger: 'blur',
+                    //         // validator: this.FUNCTIONS.systemFunction.checkMoneyNum
+                    //     }
+                    // ],
+                    // caseProcess: [
+                    //     {required: true, message: '案件进展不可为空', trigger: 'blur'}
+                    // ],
                 },
                 // 字典数据
                 dictionary: {

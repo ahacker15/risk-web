@@ -163,6 +163,9 @@
               {{ scope.row.registrateTime?$moment(scope.row.registrateTime).format(GLOBAL.config.dateFormat.ymd):'' }}
             </template>
           </el-table-column>
+          <el-table-column prop="legalEntity" label="纠纷发生法人主体" align="center" width="140"/>
+          <el-table-column prop="businessUnit" label="业务所在部门" align="center"/>
+          <el-table-column prop="oppositePart" label="对方名称" align="center"/>
           <el-table-column prop="riskType" label="风险类型" align="center">
             <template slot-scope="scope">
               {{
@@ -172,9 +175,7 @@
               }}
             </template>
           </el-table-column>
-          <el-table-column prop="legalEntity" label="纠纷发生法人主体" align="center" width="140"/>
-          <el-table-column prop="businessUnit" label="对方名称" align="center"/>
-          <el-table-column prop="riskMatter" label="风险事项" align="center"/>
+          <el-table-column prop="money" label="金额" align="center"/>
           <el-table-column prop="servicePersonal" label="服务人员" align="center">
             <template slot-scope="scope">
               {{scope.row.servicePersonal}}
@@ -230,6 +231,9 @@
               {{ scope.row.registrateTime?$moment(scope.row.registrateTime).format(GLOBAL.config.dateFormat.ymd):'' }}
             </template>
           </el-table-column>
+          <el-table-column prop="legalEntity" label="纠纷发生法人主体" align="center" width="140"/>
+          <el-table-column prop="businessUnit" label="业务所在部门" align="center"/>
+          <el-table-column prop="oppositePart" label="对方名称" align="center"/>
           <el-table-column prop="riskType" label="风险类型" align="center">
             <template slot-scope="scope">
               {{
@@ -239,9 +243,7 @@
               }}
             </template>
           </el-table-column>
-          <el-table-column prop="legalEntity" label="纠纷发生法人主体" align="center" width="140"/>
-          <el-table-column prop="businessUnit" label="对方名称" align="center"/>
-          <el-table-column prop="riskMatter" label="风险事项" align="center"/>
+          <el-table-column prop="money" label="金额" align="center"/>
           <el-table-column prop="servicePersonal" label="服务人员" align="center">
             <template slot-scope="scope">
               {{scope.row.servicePersonal}}
