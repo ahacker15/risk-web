@@ -526,13 +526,14 @@
         fileList.splice(index, 1)
       },
       getCurrentDate: function () {
-        var date1=new Date();
-        var year=date1.getFullYear();
-        var month=date1.getMonth()+1;
-        var day=date1.getDate();
-        var hours=date1.getHours();
-        var minutes=date1.getMinutes();
-        var seconds=date1.getSeconds();
+        var date1=new Date()
+        var seperator1 = "-"
+        var year=date1.getFullYear()
+        var month=date1.getMonth()+1
+        var day=date1.getDate()
+        var hours=date1.getHours()
+        var minutes=date1.getMinutes()
+        var seconds=date1.getSeconds()
         return year+seperator1+month+seperator1+day+seperator1+hours+":"+minutes+":"+seconds
       }
     }
