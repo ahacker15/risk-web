@@ -20,7 +20,8 @@
               style="width: 100%"
               v-model="formData.registrateTime"
               type="date"
-              format="yyyy-MM-dd">
+              :format="GLOBAL.config.dateFormat.yMdHm"
+            >
             </el-date-picker>
           </el-form-item>
         </el-col>

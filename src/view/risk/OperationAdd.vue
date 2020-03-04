@@ -534,7 +534,7 @@
           var hours=date1.getHours()
           var minutes=date1.getMinutes()
           var seconds=date1.getSeconds()
-          return year+seperator1+month+seperator1+day+seperator1+hours+":"+minutes+":"+seconds
+          return year+seperator1+month+seperator1+day+" "+hours+":"+minutes+":"+seconds
       }
     }
   }

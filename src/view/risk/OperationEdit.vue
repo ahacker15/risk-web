@@ -523,6 +523,7 @@
               })
             }
             Object.assign(_this.formData, resultData)
+            _this.formData.registrateTime = this.$moment(_this.formData.registrateTime).format(this.GLOBAL.config.dateFormat.ymdhms)
             _this.eventStatusClosed = _this.formData.eventStatus === 'closed' ? true : false
           }
         )
